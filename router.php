@@ -22,6 +22,9 @@ $app->route('GET /', 'SiteController->mainpage');
 
 $app->route('GET /@category', 'SiteController->category');
 
+$app->route('GET /vip', 'CategoryController->premium'); 
+$app->route('GET /vip/@id', 'CategoryController->premium'); 
+
 
 $app->route('GET /view', function($app){
 	$app->set('xvar', 'something'); 
@@ -35,10 +38,10 @@ $app->route('GET /view', function($app){
 
 $app->route('GET /memory', function($app) use($m){
 
-	$db = DB::test(); 
-	$dbf = new DBF;
+	//$db = DB::test(); 
+	//$dbf = new DBF;
 
-	$x = $dbf::ls_oil_brands(); 
+	//$x = $dbf::ls_oil_brands(); 
 	$arr = array();
 
 	for ($i=0; $i <100 ; $i++) { 
